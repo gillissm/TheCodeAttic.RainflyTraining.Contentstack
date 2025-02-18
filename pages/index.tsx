@@ -3,7 +3,6 @@ import { onEntryChange } from '../contentstack-sdk';
 import RenderComponents from '../components/render-components';
 import Skeleton from 'react-loading-skeleton';
 import {  Context } from "../typescript/pages";
-import { Props } from '../models/props-model';
 import { getPageRes } from '../helper/data-retrieval';
 
 export default function Home(props:any) {

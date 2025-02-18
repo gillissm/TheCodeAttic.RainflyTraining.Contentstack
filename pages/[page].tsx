@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { onEntryChange } from '../contentstack-sdk';
 import RenderComponents from '../components/render-components';
 import Skeleton from 'react-loading-skeleton';
-import { Props } from '../models/props-model';
 import { getPageRes } from '../helper/data-retrieval';
 
 export default function Page(props: any) {
