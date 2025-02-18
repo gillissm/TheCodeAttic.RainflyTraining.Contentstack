@@ -11,6 +11,6 @@ export type AdventureGuideProps=GlobalPageFields & {
 
 export const AdventureGuideProperties: ModelFieldsProperties = {
     contentTypeUid:'adventure_guide',
-    referenceFields: undefined,,
+    referenceFields: undefined,
     jsonRtePath: ['bio', 'top_trip_description']
 }

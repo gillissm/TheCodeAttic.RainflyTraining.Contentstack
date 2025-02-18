@@ -25,13 +25,7 @@ const theme = createTheme({
         contrastText: '#fff',
       },
     error: {
-      _main: red.A400,
-      get main() {
-        return this._main;
-      },
-      set main(value) {
-        this._main = value;
-      },
+      main: red.A400,
     },
   },
   typography: {
