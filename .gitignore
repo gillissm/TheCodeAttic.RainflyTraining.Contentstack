@@ -35,3 +35,10 @@ yarn-error.log*
 *.tsbuildinfo
 
 public/workbox-588899ac.js
+.content/content/logs/export/error.log
+.content/content/logs/export/success.log
+.content/content/main/export-info.json
+.content/logs/cli-log.log
+.content/logs/error.log
+.content/logs/success.log
+.content/logs/warn.log

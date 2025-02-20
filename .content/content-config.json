@@ -1,0 +1,13 @@
+{
+  "contentVersion": 2,
+  "master_locale": {
+    "name": "English - United States",
+    "code": "en-us"
+  },
+  "data": ".\\content",
+  "branchName": "main",
+  "fetchConcurrency": 5,
+  "writeConcurrency": 5,
+  "securedAssets": false,
+  "createBackupDir": "./temp"
+}
