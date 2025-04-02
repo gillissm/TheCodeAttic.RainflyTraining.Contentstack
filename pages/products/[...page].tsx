@@ -8,7 +8,7 @@ import { getPageRes, getProductPageRes } from '../../helper/data-retrieval';
 import ProductPost from '../../components/custom/product-post';
 
 export default function ProductItemPage(props: any) {
-  console.log('product -> page')
+  // console.log('product -> page')
   const { page, entryUrl } = props;
 
   const [getEntry, setEntry] = useState(page);

@@ -15,5 +15,5 @@ export type InternalPageLinkModel =DefaultModelFields & {
 export const InternalPageLinkProperties: ModelFieldsProperties = {
     contentTypeUid: 'internal_page_link',
     jsonRtePath: undefined,
-    referenceFields: ['target']
+    referenceFields: ['target.url']
 };

@@ -8,43 +8,44 @@ import { CTAProps } from '../../models/component-models/cta-model';
 
 
 //img_split
-export function ImageSplit({ cta }:{cta: CTAProps}) {
-
+export function ImageSplit({ cta }: { cta: CTAProps }) {
+    // console.log(cta)
     return (
-        <Card variant="outlined" sx={{ maxWidth: 345 }}>
-           <CardMedia
-                sx={{ height: 140 }}
-                image={cta.image.url}
-                title={cta.image.filename}
-            />
-            <CardContent>
-                <Typography variant="h4" component="div">
-                    {cta.title}
-                </Typography>
-                <Typography sx={{ color: 'text.secondary', mb: 1.5 }} component="div" >
-                    <p>{cta.headline}</p>
-                    <p>{cta.sub_title}</p>
-                    <div dangerouslySetInnerHTML={{__html:cta.copy}}/>
-                </Typography>
-            </CardContent>
-            {cta.action_links?.map((link, index) => (
-                <CardActions key={index}>
-                    {link.external && (
-                        <Button size="small" href={link.external.target.href}>{link.external.display_label}</Button>)}
-                    {link.internal && (
-                        <Button size="small" href={link.internal.target.url}>{link.internal.display_label}</Button>)}                    
-                </CardActions>
-            ))}
-        </Card>
+        <>
+            <Card variant="outlined" sx={{ maxWidth: 345 }}>
+                <CardMedia
+                    sx={{ height: 140 }}
+                    image={cta.image.url}
+                    title={cta.image.filename}
+                />
+                <CardContent>
+                    <Typography variant="h4" component="div">
+                        {cta.title}
+                    </Typography>
+                    <Typography sx={{ color: 'text.secondary', mb: 1.5 }} component="div" >
+                        <p>{cta.headline}</p>
+                        <p>{cta.sub_title}</p>
+                        <div dangerouslySetInnerHTML={{ __html: cta.copy }} />
+                    </Typography>
+                </CardContent>
+                {cta.action_links?.map((link, index) => (
+                    <CardActions key={index}>
+                        {link.external && (
+                            <Button size="small" href={link.external.target.href}>{link.external.display_label}</Button>)}
+                        {link.internal && link.internal.length > 0 && (
+                            <Button size="small" href={link.internal[0].target.url}>{link.internal[0].display_label}</Button>)}
+                    </CardActions>
+                ))}
+            </Card>
+        </>
     );
-
 }
 
 //txt_only
 export function TextOnly({ cta }: { cta: CTAProps }) {
 
     return (
-        <Card variant="outlined" sx={{ maxWidth: 345 }}>
+        <>  <Card variant="outlined" sx={{ maxWidth: 345 }}>
             <CardContent>
                 <Typography variant="h4" component="div">
                     {cta.title}
@@ -52,48 +53,51 @@ export function TextOnly({ cta }: { cta: CTAProps }) {
                 <Typography sx={{ color: 'text.secondary', mb: 1.5 }} component="div" >
                     <p>{cta.headline}</p>
                     <p>{cta.sub_title}</p>
-                    <div dangerouslySetInnerHTML={{__html:cta.copy}}/>
+                    <div dangerouslySetInnerHTML={{ __html: cta.copy }} />
                 </Typography>
             </CardContent>
             {cta.action_links?.map((link, index) => (
                 <CardActions key={index}>
                     {link.external && (
                         <Button size="small" href={link.external.target.href}>{link.external.display_label}</Button>)}
-                    {link.internal && (
-                        <Button size="small" href={link.internal.target.url}>{link.internal.display_label}</Button>)}                    
+                    {link.internal && link.internal.length > 0 &&(
+                        <Button size="small" href={link.internal[0].target.url}>{link.internal[0].display_label}</Button>)}
                 </CardActions>
             ))}
         </Card>
+        </>
     );
 }
 
 //img_only
-export function ImageOnly({ cta }:{cta: CTAProps}) {
+export function ImageOnly({ cta }: { cta: CTAProps }) {
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-                sx={{ height: 140 }}
-                image={cta.image.url}
-                title={cta.image.filename}
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {cta.title}
-                </Typography>
-            </CardContent>
-            {cta.action_links?.map((link, index) => (
-                <CardActions key={index}>
-                    {link.external && (
-                        <Button size="small" href={link.external.target.href}>{link.external.display_label}</Button>)}
-                    {link.internal && (
-                        <Button size="small" href={link.internal.target.url}>{link.internal.display_label}</Button>)}                    
-                </CardActions>
-            ))}
-        </Card>
+        <>
+            <Card sx={{ maxWidth: 345 }}>
+                <CardMedia
+                    sx={{ height: 140 }}
+                    image={cta.image.url}
+                    title={cta.image.filename}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {cta.title}
+                    </Typography>
+                </CardContent>
+                {cta.action_links?.map((link, index) => (
+                    <CardActions key={index}>
+                        {link.external && (
+                            <Button size="small" href={link.external.target.href}>{link.external.display_label}</Button>)}
+                        {link.internal && link.internal.length > 0 && (
+                            <Button size="small" href={link.internal[0].target.url}>{link.internal[0].display_label}</Button>)}
+                    </CardActions>
+                ))}
+            </Card>
+        </>
     );
 }
 
-export default function Cta({ cta }: { cta: CTAProps }) {    
+export default function Cta({ cta }: { cta: CTAProps }) {
     switch (cta.cta_variant) {
         case 'img_split':
             return <ImageSplit cta={cta} />;

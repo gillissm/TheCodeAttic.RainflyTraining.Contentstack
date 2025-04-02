@@ -7,12 +7,13 @@ import BasicBanner from './custom/basic-banner';
 import ExternalActionLink from './custom/external-action-link';
 import BannerCarousel from './custom/banner-carousel';
 import FilterListing from './custom/filter-lising';
+import CtaRow from './custom/cta-row';
 
 
 export default function RenderComponents(props: RenderProps) {
   const { pageComponents, blogPost, entryUid, contentTypeUid, locale } = props;
-  console.log('RenderComponents')
-  console.log(pageComponents);
+  // console.log('RenderComponents')
+  // console.log(pageComponents);
   return (
     <div
       data-pageref={entryUid}
@@ -46,6 +47,9 @@ export default function RenderComponents(props: RenderProps) {
               // return (<div key={`component-filter-${key}-${i}`}>{l.headline} - {l.target_content_type}</div>)
             })}
           </>);         
+        }
+        if (component.cta_row) {
+          return (<CtaRow ctaRow={component.cta_row} key={`component-ctarow-${key}`} />);
         }
       })}
     </div>

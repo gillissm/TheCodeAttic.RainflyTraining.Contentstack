@@ -12,6 +12,7 @@ import { ExternalLinkModel } from '../global-fields/external-link-model';
 import { BannerCarouselProps } from '../component-models/banner-carousel-model';
 import { CTAProps, CTAPropsProperties } from '../component-models/cta-model';
 import { ListingDisplayProperties, ListingDisplayProps } from '../component-models/listing-display-model';
+import { CTARowProps, CTARowPropsProperties } from '../component-models/cta-row-model';
 
 
 export type PageProps = GlobalPageFields &{
@@ -28,16 +29,19 @@ export type PageComponents = {
     banner_carousel: BannerCarouselProps;
     cta: { cta: CTAProps[] };
     filter_listing: { listing: ListingDisplayProps[] };
+    cta_row: CTARowProps;
 }
 
 export const PageProperties: ModelFieldsProperties = {
     contentTypeUid:'page',    
     jsonRtePath: [''].concat(CreateRichtextList('page_elements.cta.cta', CTAPropsProperties))
         .concat(CreateRichtextList('page_elements.products', MultipleProductDisplayProperties))
-        .concat(CreateRichtextList('page_elements.form', FormEmbedModelProperties)),
+        .concat(CreateRichtextList('page_elements.form', FormEmbedModelProperties))
+        .concat(CreateRichtextList('page_elements.cta_row', CTARowPropsProperties)),
     referenceFields: ['page_elements.filter_listing.listing'].concat(CreateReferenceList('page_elements.cta.cta', CTAPropsProperties))
         .concat(CreateReferenceList('page_elements.products', MultipleProductDisplayProperties))
-        .concat(CreateReferenceList('page_elements.image_gallery', ImageGalleryWithLinksModelProperties))    
+        .concat(CreateReferenceList('page_elements.image_gallery', ImageGalleryWithLinksModelProperties))
+        .concat(CreateReferenceList('page_elements.cta_row', CTARowPropsProperties))
         //.concat(CreateReferenceList('page_elements.filter_listing.listing',ListingDisplayProperties ))    
 }
 

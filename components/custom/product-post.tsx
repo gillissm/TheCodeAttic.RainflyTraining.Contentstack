@@ -6,8 +6,8 @@ import { ProductDetails, ProductProps } from '../../models/page-models/product-p
 
 
 export default function ProductPost({ product }: { product: ProductProps }) {
-    console.log('product post')
-    console.log(product.product_details[1].key_information.bullet_item)
+    // console.log('product post')
+    // console.log(product.product_details[1].key_information.bullet_item)
     return (
         <>
             <Grid container spacing={2} sx={{ padding: 2 }}>

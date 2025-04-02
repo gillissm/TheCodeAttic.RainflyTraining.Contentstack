@@ -41,7 +41,9 @@ export default function BasicMenuItem({ menuModel, indexKey }: { menuModel: Menu
                     }}
                 >
                     {menuModel.menu_item.map((mi, index) => (
-                        <a key={index} href={mi.href}>{mi.title} - {mi.href}</a>
+                        <MenuItem key={index}>
+                            <a key={index} href={mi.href}>{mi.title}</a>
+                        </MenuItem>
                     ))}
                 </Menu>
             </Box>

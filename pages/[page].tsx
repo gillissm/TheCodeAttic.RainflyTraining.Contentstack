@@ -5,15 +5,15 @@ import Skeleton from 'react-loading-skeleton';
 import { getPageRes } from '../helper/data-retrieval';
 
 export default function Page(props: any) {
-  console.log('page file')
-  console.log(props);
+  // console.log('page file')
+  // console.log(props);
   const { page, entryUrl } = props;
   const [getEntry, setEntry] = useState(page);
 
   async function fetchData() {
     try {
-      console.log('in fetch data for page');
-      console.log(entryUrl)
+      // console.log('in fetch data for page');
+      // console.log(entryUrl)
       const entryRes = await getPageRes(entryUrl);
       if (!entryRes) throw new Error('Status code 404');
       setEntry(entryRes);
