@@ -1,5 +1,6 @@
 const withPWA = require("next-pwa")({
   dest: "public",
+  buildExcludes: ['public/sw.js']
 });
 
 const config = {
