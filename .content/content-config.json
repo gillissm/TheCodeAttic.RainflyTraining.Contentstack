@@ -4,10 +4,11 @@
     "name": "English - United States",
     "code": "en-us"
   },
-  "data": ".\\content",
+  "data": ".\\content\\main",
   "branchName": "main",
   "fetchConcurrency": 5,
   "writeConcurrency": 5,
   "securedAssets": false,
-  "createBackupDir": "./temp"
+  "createBackupDir": "./temp",
+  "entriesPublish": false
 }
