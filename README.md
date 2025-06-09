@@ -1,6 +1,3 @@
-[![Contentstack Logo](/public/contentstack-readme-logo.png)](https://www.contentstack.com/)
-
-
 # Build a Starter Website with Next.js and Contentstack
 
 **TARGET NODE: 22.16.0**

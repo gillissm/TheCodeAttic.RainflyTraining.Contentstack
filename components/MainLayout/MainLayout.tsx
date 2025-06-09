@@ -1,9 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react'
-import { LocaleContext } from '@/context'
 
 import { onEntryChange } from '@/config'
-import useRouterHook from '@/utils/useRouterHook'
 import { LayoutModel } from '@/types/generic'
 import { getFooterRes, getHeaderRes } from '@/utils'
 import Footer from '../Footer/footer'

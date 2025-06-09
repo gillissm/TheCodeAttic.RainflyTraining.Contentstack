@@ -1,11 +1,10 @@
 'use client';
 
 import { EventPost, NotFoundComponent } from '@/components';
-import RenderComponents from '@/components/render-components';
 import { onEntryChange } from '@/config';
 import { usePersonalization } from '@/context';
 import { getEntryByUrl } from '@/services';
-import { EventPostProperties, EventPostProps, PageProperties, } from '@/types/page-models';
+import { EventPostProperties, EventPostProps,  } from '@/types/page-models';
 import { isDataInLiveEdit } from '@/utils';
 import useRouterHook from '@/utils/useRouterHook';
 import { useEffect, useState } from 'react';
