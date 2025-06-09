@@ -1,0 +1,37 @@
+{
+  "name": "src",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@contentstack/delivery-sdk": "^4.7.0",
+    "@contentstack/live-preview-utils": "^3.2.3",
+    "@contentstack/personalize-edge-sdk": "^1.0.15",
+    "@contentstack/utils": "^1.4.1",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.1",
+    "@mui/material": "^7.1.1",
+    "@mui/material-nextjs": "^7.1.1",
+    "@timbenniks/contentstack-endpoints": "^1.0.10",
+    "html-react-parser": "^5.2.5",
+    "lodash": "^4.17.21",
+    "next": "15.3.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/lodash": "^4.17.17",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "typescript": "^5"
+  }
+}

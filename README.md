@@ -3,7 +3,7 @@
 
 # Build a Starter Website with Next.js and Contentstack
 
-**TARGET NODE: 20.15.1**
+**TARGET NODE: 22.16.0**
 
 About Contentstack: Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 

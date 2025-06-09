@@ -3,17 +3,22 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # testing
-coverage
+/coverage
 
 # next.js
-.next/
-out/
+/.next/
+/out/
 
 # production
-build
+/build
 
 # misc
 .DS_Store
@@ -25,20 +30,25 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# local env files
-.env*.local
+# env files (can opt-in for committing if needed)
+.env*
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
+next-env.d.ts
 
-public/workbox-588899ac.js
-.content/logs
-public/workbox-4754cb34.js
-.content/_backup_*
-.content/temp
-.content/content/logs
-.content/content/main/logs
-
+/src/node_modules
+/src/.next
+/src/out
+/src/build
+/src/.vercel
+/src/*.tsbuildinfo
+/src/next-env.d.ts
+/.content/_backup*
+/.content/logs/*
+/.content/content/logs/*
+/.content/content/main/logs/*
+/.content/temp/*
