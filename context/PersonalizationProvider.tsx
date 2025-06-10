@@ -88,7 +88,7 @@ export const PersonalizationProvider = ({ children }: { children: ReactNode }) =
     useEffect(() => {
         initializePersonalizationSDK().then(() => {
             setIsInitialized(true)
-            getPersonalizationConfigFromCMS()
+          //  getPersonalizationConfigFromCMS()
         })
     }, [])
 
