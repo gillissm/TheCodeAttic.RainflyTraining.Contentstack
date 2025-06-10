@@ -6,9 +6,9 @@ import { PageProps } from '../page-models/page-model';
 import { ProductProps } from '../page-models/product-post-model';
 
 
-export type InternalPageLinkModel =DefaultModelFields & {
+export type InternalPageLinkModel = DefaultModelFields & {
     display_label: string;
-    target: ProductProps | PageProps | NewsProps | EventPostProps | BlogPostProps    
+    target: { url: string, uid: string, _content_type_uid: string }[]//ProductProps | PageProps | NewsProps | EventPostProps | BlogPostProps    
 }
 
 export const InternalPageLinkProperties: ModelFieldsProperties = {

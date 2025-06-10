@@ -14,11 +14,11 @@ export type CTAProps = DefaultModelFields &{
 
 export type ActionLinkProps = {
     external: ExternalLinkModel | null;
-    internal: InternalPageLinkModel[] | null;
+    internal: InternalPageLinkModel | null;
 }
 
 export const CTAPropsProperties: ModelFieldsProperties = {
     contentTypeUid:'cta',    
     jsonRtePath:['copy'],
-    referenceFields:['cta.action_links.internal.internal_page_link.target.url'].concat(CreateReferenceList('cta.action_links.internal', InternalPageLinkProperties))
+    referenceFields:['action_links.internal.target.url'].concat(CreateReferenceList('action_links.internal', InternalPageLinkProperties))
 }

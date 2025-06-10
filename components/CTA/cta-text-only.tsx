@@ -7,7 +7,7 @@ import { Card, CardContent, Typography, CardActions, Button } from '@mui/materia
 export function TextOnly({ cta }: { cta: CTAProps }) {
 
     return (
-        <>  <Card variant="outlined" sx={{ maxWidth: 345 }}>
+        <>  <Card variant="outlined" >{/*sx={{ maxWidth: 345 }}*/}
             <CardContent>
                 <Typography variant="h4" component="div">
                     {cta.title}
@@ -22,8 +22,8 @@ export function TextOnly({ cta }: { cta: CTAProps }) {
                 <CardActions key={index}>
                     {link.external && (
                         <Button size="small" href={link.external.target.href}>{link.external.display_label}</Button>)}
-                    {link.internal && link.internal.length > 0 &&(
-                        <Button size="small" href={link.internal[0].target.url}>{link.internal[0].display_label}</Button>)}
+                    {link.internal && link.internal.target.length > 0 &&(
+                        <Button size="small" href={link.internal?.target[0].url}>{link.internal?.display_label}</Button>)}
                 </CardActions>
             ))}
         </Card>

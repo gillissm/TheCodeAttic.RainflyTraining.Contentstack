@@ -1,9 +1,9 @@
-import { BannerCarouselProps, CTAProps, ListingDisplayProps, CTARowProps, CTAPropsProperties, CTARowPropsProperties } from '../component-models';
+import { BannerCarouselProps, CTAProps, ListingDisplayProps, CTARowProps, CTAPropsProperties, CTARowPropsProperties, BannerCarouselProperties } from '../component-models';
 import { ModelFieldsProperties, CreateRichtextList, CreateReferenceList } from '../generic';
 import { FormEmbedModel, TestimonialsModel, ImageGalleryWithLinksModel, MultipleProductDisplay, BasicBannerModel, ExternalLinkModel, MultipleProductDisplayProperties, FormEmbedModelProperties, ImageGalleryWithLinksModelProperties } from '../global-fields';
 import { GlobalPageFields } from './global-fields';
 
-export type PageProps = GlobalPageFields &{
+export type PageProps = GlobalPageFields & {
     page_elements: PageComponents[];
 }
 
@@ -14,14 +14,16 @@ export type PageComponents = {
     products: MultipleProductDisplay;
     banner: BasicBannerModel;
     external_action_link: ExternalLinkModel;
-    banner_carousel: BannerCarouselProps;
+    banner_carousel: {
+        carousel: BannerCarouselProps[];
+    };
     cta: { cta: CTAProps[] };
     filter_listing: { listing: ListingDisplayProps[] };
     cta_row: CTARowProps;
-}
+};
 
 export const PageProperties: ModelFieldsProperties = {
-    contentTypeUid:'page',    
+    contentTypeUid: 'page',
     jsonRtePath: [''].concat(CreateRichtextList('page_elements.cta.cta', CTAPropsProperties))
         .concat(CreateRichtextList('page_elements.products', MultipleProductDisplayProperties))
         .concat(CreateRichtextList('page_elements.form', FormEmbedModelProperties))
@@ -30,7 +32,8 @@ export const PageProperties: ModelFieldsProperties = {
         .concat(CreateReferenceList('page_elements.products', MultipleProductDisplayProperties))
         .concat(CreateReferenceList('page_elements.image_gallery', ImageGalleryWithLinksModelProperties))
         .concat(CreateReferenceList('page_elements.cta_row', CTARowPropsProperties))
-        //.concat(CreateReferenceList('page_elements.filter_listing.listing',ListingDisplayProperties ))    
+        .concat(CreateReferenceList('page_elements.banner_carousel.carousel', BannerCarouselProperties))
+    //.concat(CreateReferenceList('page_elements.filter_listing.listing',ListingDisplayProperties ))    
 }
 
 

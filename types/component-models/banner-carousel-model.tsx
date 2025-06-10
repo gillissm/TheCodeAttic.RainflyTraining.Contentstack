@@ -15,6 +15,6 @@ export type Slide={
 
 export const BannerCarouselProperties: ModelFieldsProperties = {
     contentTypeUid:'banner_carousel',
-    referenceFields: undefined,
+    referenceFields: ["slides","slides.slide_image"],
     jsonRtePath: undefined
 }

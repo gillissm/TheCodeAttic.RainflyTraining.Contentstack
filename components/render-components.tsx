@@ -38,7 +38,7 @@ export default function RenderComponents(props: RenderProps) {
           return (<ExternalActionLink actionProps={component.external_action_link} key={`component-extlink-${key}`} />);
         }
         if (component.banner_carousel) {
-          return (<BannerCarousel bannerProps={component.banner_carousel} key={`component-bannerslider-${key}`} />);
+          return (<BannerCarousel bannerProps={component.banner_carousel.carousel[0]} key={`component-bannerslider-${key}`} />);
         }
         if (component.filter_listing) {
           return (<>
